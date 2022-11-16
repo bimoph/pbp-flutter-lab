@@ -1,4 +1,6 @@
+import 'package:counter_7/data_budget.dart';
 import 'package:flutter/material.dart';
+import 'package:counter_7/tambah_budget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -60,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
-      if (_counter % 2 == 0){
+      if (_counter % 2 == 0) {
         _textString = 'GENAP';
       } else {
         _textString = 'GANJIL';
@@ -68,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-    void _decrementCounter() {
+  void _decrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
@@ -78,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
       if (_counter > 0) {
         _counter--;
       }
-      if (_counter % 2 == 0){
+      if (_counter % 2 == 0) {
         _textString = 'GENAP';
       } else {
         _textString = 'GANJIL';
@@ -99,6 +101,43 @@ class _MyHomePageState extends State<MyHomePage> {
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
+      ),
+      drawer: Drawer(
+        child: Column(children: [
+          ListTile(
+            title: const Text('counter_7'),
+            onTap: () {
+              // Route menu ke halaman utama
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const MyHomePage(
+                          title: 'Program Counter',
+                        )),
+              );
+            },
+          ),
+          ListTile(
+            title: const Text('Tambah Budget'),
+            onTap: () {
+              // Route menu ke halaman form
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const MyFormPage()),
+              );
+            },
+          ),
+          ListTile(
+            title: const Text('Data Budget'),
+            onTap: () {
+              // Route menu ke halaman form
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const DataBudgetPage()),
+              );
+            },
+          ),
+        ]),
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -133,35 +172,31 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-
       floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          const SizedBox(
-            height: 10,
-            width: 31,
-          ),
-          Align(
-            alignment: Alignment.bottomLeft,
-            child: FloatingActionButton(
-              onPressed: _decrementCounter,
-              tooltip: 'Decrement',
-              child: const Icon(Icons.remove),
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            const SizedBox(
+              height: 10,
+              width: 31,
             ),
-          ),
-          Expanded(
-            child: Align(
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: FloatingActionButton(
+                onPressed: _decrementCounter,
+                tooltip: 'Decrement',
+                child: const Icon(Icons.remove),
+              ),
+            ),
+            Expanded(
+                child: Align(
               alignment: Alignment.bottomRight,
               child: FloatingActionButton(
                 onPressed: _incrementCounter,
                 tooltip: 'Increment',
                 child: const Icon(Icons.add),
               ),
-            )
-          )
-          
-        ]
-      ),
+            ))
+          ]),
     );
   }
 }
