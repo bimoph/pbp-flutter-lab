@@ -71,129 +71,121 @@ class _MyFormPageState extends State<MyFormPage> {
         body: Form(
           key: _formKey,
           child: SingleChildScrollView(
-            child: Container(
-              // margin: const EdgeInsets.all(8),
-              // decoration: BoxDecoration(
-              //   border: Border.all(color: Colors.grey),
-              //   borderRadius: BorderRadius.circular(5),
-              // ),
-              // padding: const EdgeInsets.all(20.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    // JUDUL INPUT
-                    // Menggunakan padding sebesar 8 pixels
-                    padding: const EdgeInsets.all(8.0),
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        // hintText: "Contoh: Pak Dengklek",
-                        labelText: "Judul",
-                        // Menambahkan icon agar lebih intuitif
-                        // icon: const Icon(Icons.people),
-                        // Menambahkan circular border agar lebih rapi
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                        ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  // JUDUL INPUT
+                  // Menggunakan padding sebesar 8 pixels
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      // hintText: "Contoh: Pak Dengklek",
+                      labelText: "Judul",
+                      // Menambahkan icon agar lebih intuitif
+                      // icon: const Icon(Icons.people),
+                      // Menambahkan circular border agar lebih rapi
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5.0),
                       ),
-                      // Menambahkan behavior saat nama diketik
-                      onChanged: (String? value) {
-                        setState(() {
-                          _judul = value!;
-                        });
-                      },
-                      // Menambahkan behavior saat data disimpan
-                      onSaved: (String? value) {
-                        setState(() {
-                          _judul = value!;
-                        });
-                      },
-                      // Validator sebagai validasi form
-                      validator: (String? value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Nama lengkap tidak boleh kosong!';
-                        }
-                        return null;
-                      },
                     ),
+                    // Menambahkan behavior saat nama diketik
+                    onChanged: (String? value) {
+                      setState(() {
+                        _judul = value!;
+                      });
+                    },
+                    // Menambahkan behavior saat data disimpan
+                    onSaved: (String? value) {
+                      setState(() {
+                        _judul = value!;
+                      });
+                    },
+                    // Validator sebagai validasi form
+                    validator: (String? value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Nama lengkap tidak boleh kosong!';
+                      }
+                      return null;
+                    },
                   ),
-                  Padding(
-                    // NOMINAL INPUT
-                    // Menggunakan padding sebesar 8 pixels
-                    padding: const EdgeInsets.all(8.0),
-                    child: TextFormField(
-                      keyboardType: TextInputType.number,
-                      inputFormatters: <TextInputFormatter>[
-                        FilteringTextInputFormatter.digitsOnly
-                      ],
-                      decoration: InputDecoration(
-                        // hintText: "Contoh: Pak Dengklek",
-                        labelText: "Nominal",
-                        // Menambahkan icon agar lebih intuitif
-                        // icon: const Icon(Icons.people),
-                        // Menambahkan circular border agar lebih rapi
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                        ),
+                ),
+                Padding(
+                  // NOMINAL INPUT
+                  // Menggunakan padding sebesar 8 pixels
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextFormField(
+                    keyboardType: TextInputType.number,
+                    inputFormatters: <TextInputFormatter>[
+                      FilteringTextInputFormatter.digitsOnly
+                    ],
+                    decoration: InputDecoration(
+                      // hintText: "Contoh: Pak Dengklek",
+                      labelText: "Nominal",
+                      // Menambahkan icon agar lebih intuitif
+                      // icon: const Icon(Icons.people),
+                      // Menambahkan circular border agar lebih rapi
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5.0),
                       ),
-                      // Menambahkan behavior saat nama diketik
-                      onChanged: (String? value) {
-                        setState(() {
-                          nominal = double.parse(value!);
-                        });
-                      },
-                      // Menambahkan behavior saat data disimpan
-                      onSaved: (String? value) {
-                        setState(() {
-                          nominal = double.parse(value!);
-                        });
-                      },
-                      // Validator sebagai validasi form
-                      validator: (String? value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Nama lengkap tidak boleh kosong!';
-                        }
-                        return null;
-                      },
                     ),
+                    // Menambahkan behavior saat nama diketik
+                    onChanged: (String? value) {
+                      setState(() {
+                        nominal = double.parse(value!);
+                      });
+                    },
+                    // Menambahkan behavior saat data disimpan
+                    onSaved: (String? value) {
+                      setState(() {
+                        nominal = double.parse(value!);
+                      });
+                    },
+                    // Validator sebagai validasi form
+                    validator: (String? value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Nama lengkap tidak boleh kosong!';
+                      }
+                      return null;
+                    },
                   ),
-                  ListTile(
-                    // leading: const Icon(Icons.class_),
-                    // title: const Text(
-                    //   'Pilih Jenis',
-                    // ),
-                    trailing: DropdownButton(
-                      value: jenis,
-                      icon: const Icon(Icons.keyboard_arrow_down),
-                      items: listJenis.map((String items) {
-                        return DropdownMenuItem(
-                          value: items,
-                          child: Text(items),
-                        );
-                      }).toList(),
-                      onChanged: (String? newValue) {
-                        setState(() {
-                          jenis = newValue!;
-                        });
-                      },
+                ),
+                ListTile(
+                  // leading: const Icon(Icons.class_),
+                  // title: const Text(
+                  //   'Pilih Jenis',
+                  // ),
+                  trailing: DropdownButton(
+                    value: jenis,
+                    icon: const Icon(Icons.keyboard_arrow_down),
+                    items: listJenis.map((String items) {
+                      return DropdownMenuItem(
+                        value: items,
+                        child: Text(items),
+                      );
+                    }).toList(),
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        jenis = newValue!;
+                      });
+                    },
+                  ),
+                ),
+                TextButton(
+                    // ignore: sort_child_properties_last
+                    child: const Text(
+                      "Simpan",
+                      style: TextStyle(color: Colors.white),
                     ),
-                  ),
-                  TextButton(
-                      // ignore: sort_child_properties_last
-                      child: const Text(
-                        "Simpan",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.blue),
-                      ),
-                      onPressed: () {
-                        if (_formKey.currentState!.validate()) {}
-                        ListModelBudget.isi
-                            .add(ModelBudget(_judul, nominal, jenis));
-                      }),
-                ],
-              ),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.blue),
+                    ),
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {}
+                      ListModelBudget.isi
+                          .add(ModelBudget(_judul, nominal, jenis));
+                    }),
+              ],
             ),
           ),
         ));

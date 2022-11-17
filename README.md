@@ -1,3 +1,4 @@
+### TUGAS 7
 ## Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget dan jelaskan perbedaan dari keduanya.
 - Widget stateless adalah widget yang tidak dapat diubah/tidak diubah (immutable). Konfigurasi yang dikandungnya diinisialisasi dari awal. Widget ini tidak mengubah data, jadi statis.
 - Widget stateful adalah widget yang mudah berubah. Widget stateful dapat mengubah data sebagai respons terhadap interaksi pengguna. Untuk mengubah perubahan data, panggil fungsi setState() untuk memanipulasi dan mengubah data.
@@ -21,3 +22,21 @@ final diinialisasi pada saat pertama kali digunakan dan hanya di setting sekali.
 
 ## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
 Membuat aplikasi flutter, lalu menambahkan floating action button untuk pengurangan disertai fungsi decrements. Lalu membuat text dan style text ganjil dan genap menyesuaikan terhadap angka. 
+
+### TUGAS 8
+## Jelaskan perbedaan Navigator.push dan Navigator.pushReplacement.
+Navigator.pushReplacement merupakan metode push yang membuang rute sebelumnya sehingga jika berpindah halaman tidak dapat kembali ke halaman sebelumnya. Navigator.push merupakan metode push untuk menambahkan rute lain ke atas tumpukan, jadi menampilkan halaman baru dan tetap dapat mengakses halaman sebelumnya.
+
+## Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
+ListTile adalah untuk menampilkan detail dari sebuah children. ListView adalah untuk menampilkan list dengan jumlah data yang besar.Form adalah untuk membukus form field. DropdownButton adalah untuk membuat button pilihan. SizedBox adalah untuk mengatur ukuran box. Drawer adalah untuk navigasi antar page.
+
+
+## Sebutkan jenis-jenis event yang ada pada Flutter (contoh: onPressed).
+onChanged adalah untuk mengeksekusi jika sebuah widget diubah. onFocusChanged adalah untuk mengeksekusi jika fokus berubah. onSaved adalah untuk mengeksekusi jika sebuah widget disiimpan. onHover adalah untuk mengeksekusi jika pointer bergerak dalam sebuah widget. onPressed adalah untuk mengeksekusi jika sebuah widget diklik.
+
+
+## Jelaskan bagaimana cara kerja Navigator dalam "mengganti" halaman dari aplikasi Flutter.
+Navigator pada flutter serupa dengan implementasi stack. Sehingga jika melakukan "push" akan menuju suatu halaman dan untuk mengembalikannya menggunakan "pop". "push" menambahkan halaman pada antrian teratas stack dan "pop" mengurangi halaman pada antrian stack.
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+Saya menambahkan drawer beserta dengan navigator mengarah ke class lain sesuai dengan ketentuan soal. Lalu, Saya membuat halaman form dengan membuat kelas pageform yang berisi textfield dan dropdown field, ketika submit di klik. Maka data form tersebut akan dijadikan instance dari model lalu disimpan pada ListModelBudget. lalu pada data_budget data di ListModelBudget di tampilkan.
