@@ -1,6 +1,6 @@
-import 'package:counter_7/model.dart';
+import 'package:counter_7/model/model.dart';
 import 'package:flutter/material.dart';
-import 'package:counter_7/tambah_budget.dart';
+import 'package:counter_7/page/tambah_budget.dart';
 import 'package:counter_7/main.dart';
 
 class DataBudgetPage extends StatefulWidget {

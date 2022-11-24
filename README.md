@@ -40,3 +40,22 @@ Navigator pada flutter serupa dengan implementasi stack. Sehingga jika melakukan
 
 ## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
 Saya menambahkan drawer beserta dengan navigator mengarah ke class lain sesuai dengan ketentuan soal. Lalu, Saya membuat halaman form dengan membuat kelas pageform yang berisi textfield dan dropdown field, ketika submit di klik. Maka data form tersebut akan dijadikan instance dari model lalu disimpan pada ListModelBudget. lalu pada data_budget data di ListModelBudget di tampilkan.
+
+
+
+
+## Tugas 9: Integrasi Web Service pada Flutter
+## Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
+Bisa saja, namun lebih baik menggunakan model dikarenakan dengan model mempresentasikan dari json. Selain itu, model dapat memastikan juga tipe data setiap field model dengan jelas. 
+
+## Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
+1. FutureBuilder = Untuk mengkontruksi widget berdasarkan snapshot.
+2. Column = Mempresentasikan kolom
+3. BoxDecoration = untuk mendekorasi elemen box flutter
+4. FutureBuilder = membuat widget berdasarkan snapshot terakhir.
+
+## Jelaskan mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter.
+Dilakukan dengan fetch pada method yang ada pada file, kemudian data di convert menjadi model dari json. Dari model tersebut disimpan dalam list, dan lalu tiap elemen dari list tersebut ditampilkan pada halaman.
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+Membuat model berdasarkan json yang akan diambil. Melakukan fetch dengan membuat Future async. Menampilkan data dari fungsi asinkronus.

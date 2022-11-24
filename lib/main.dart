@@ -1,6 +1,7 @@
-import 'package:counter_7/data_budget.dart';
+import 'package:counter_7/page/data_budget.dart';
 import 'package:flutter/material.dart';
-import 'package:counter_7/tambah_budget.dart';
+import 'package:counter_7/page/tambah_budget.dart';
+import 'package:counter_7/page/mywatchlist.dart';
 
 void main() {
   runApp(const MyApp());
@@ -134,6 +135,17 @@ class _MyHomePageState extends State<MyHomePage> {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(builder: (context) => const DataBudgetPage()),
+              );
+            },
+          ),
+          ListTile(
+            title: const Text('My Watch List'),
+            onTap: () {
+              // Route menu ke halaman form
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const MyWatchListPage()),
               );
             },
           ),
